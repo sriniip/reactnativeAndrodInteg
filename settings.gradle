@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        maven {
+            // All of React Native (JS, Android binaries) is installed from npm
+            url ("/Users/veda/integratedReactNativeProject/node_modules/react-native/android")
+        }
+        maven {
+            // Android JSC is installed from npm
+            url("/Users/veda/integratedReactNativeProject/node_modules/jsc-android/dist")
+        }
+        gradlePluginPortal()
+    }
+}
+/*
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}*/
+
+rootProject.name = "NewAndroidAppForReact"
+include ':app'
+apply from: file("/Users/veda/integratedReactNativeProject/node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
